@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manoj Kumar - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{--bg:#0d0d0d;--card:#161616;--border:#2a2a2a;--accent:#c8a96e;--text:#e8e3d8;--muted:#7a7a72;--font-head:'Playfair Display',serif;--font-body:'DM Sans',sans-serif}
+  body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;overflow-x:hidden}
+  nav{position:fixed;top:0;width:100%;background:rgba(13,13,13,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);z-index:100;display:flex;justify-content:space-between;align-items:center;padding:1rem 3rem}
+  .logo{font-family:var(--font-head);font-size:1.3rem;color:var(--accent)}
+  .nav-links{display:flex;gap:2rem;list-style:none}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+  .nav-links a:hover{color:var(--accent)}
+  section{padding:5rem 3rem;max-width:900px;margin:0 auto}
+  #hero{padding-top:9rem;min-height:100vh;display:flex;align-items:center}
+  .hero-inner{display:flex;flex-direction:column;gap:1.2rem}
+  .hero-tag{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  h1{font-family:var(--font-head);font-size:clamp(2.8rem,6vw,5rem);line-height:1.1;font-weight:400}
+  h1 span{color:var(--accent)}
+  .hero-sub{font-size:1.05rem;color:var(--muted);max-width:500px;line-height:1.7}
+  .hero-btns{display:flex;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+  .btn{padding:.7rem 1.8rem;border-radius:4px;font-size:.85rem;cursor:pointer;text-decoration:none;transition:.2s;letter-spacing:.05em}
+  .btn-primary{background:var(--accent);color:#0d0d0d;border:none;font-weight:500}
+  .btn-primary:hover{background:#d4b87a}
+  .btn-outline{background:transparent;color:var(--text);border:1px solid var(--border)}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+  .divider{width:60px;height:2px;background:var(--accent);margin-bottom:2rem}
+  h2{font-family:var(--font-head);font-size:2rem;font-weight:400;margin-bottom:.5rem}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.5rem}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+  .info-row{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--border);font-size:.9rem}
+  .info-row:last-child{border-bottom:none}
+  .info-label{color:var(--muted)}
+  .info-val{font-weight:500;text-align:right}
+  table{width:100%;border-collapse:collapse;font-size:.88rem;margin-top:1rem}
+  th{text-align:left;padding:.8rem 1rem;background:rgba(200,169,110,.08);color:var(--accent);font-weight:500;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
+  td{padding:.75rem 1rem;border-bottom:1px solid var(--border);color:var(--text)}
+  tr:last-child td{border-bottom:none}
+  .skill-pill{display:inline-block;padding:.35rem 1rem;background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.25);border-radius:100px;font-size:.82rem;color:var(--accent);margin:.3rem}
+  .fav-item{display:flex;align-items:center;gap:.75rem;padding:.75rem 0;border-bottom:1px solid var(--border);font-size:.9rem}
+  .fav-item:last-child{border-bottom:none}
+  .fav-icon{width:32px;height:32px;border-radius:6px;background:rgba(200,169,110,.1);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0}
+  .fav-label{color:var(--muted);font-size:.75rem}
+  .place-chip{display:inline-flex;align-items:center;gap:.4rem;padding:.4rem 1rem;background:var(--card);border:1px solid var(--border);border-radius:100px;font-size:.85rem;margin:.3rem}
+  footer{text-align:center;padding:3rem;color:var(--muted);font-size:.8rem;border-top:1px solid var(--border)}
+  .section-fade{opacity:0;transform:translateY(24px);transition:opacity .5s ease,transform .5s ease}
+  .section-fade.visible{opacity:1;transform:none}
+  @media(max-width:600px){.grid2,.grid3{grid-template-columns:1fr}nav{padding:1rem 1.5rem}.nav-links{gap:1rem}section{padding:4rem 1.5rem}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">MK</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#resume">Resume</a></li>
+    <li><a href="#favourites">Interests</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="hero">
+  <div class="hero-inner section-fade">
+    <span class="hero-tag">B.Tech CSE (AI) · Amrita University</span>
+    <h1>C. <span>Manoj</span><br>Kumar</h1>
+    <p class="hero-sub">A first-year student passionate about Artificial Intelligence, driven by curiosity and a commitment to continuous learning.</p>
+    <div class="hero-btns">
+      <a href="#resume" class="btn btn-primary">View Resume</a>
+      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-fade">
+    <div class="divider"></div>
+    <h2>About Me</h2>
+    <p style="color:var(--muted);margin-bottom:2rem;line-height:1.8">Indian student with a love for learning, service, and technology. Fluent in English & Telugu.</p>
+    <div class="grid2">
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Personal Info</p>
+        <div class="info-row"><span class="info-label">Full Name</span><span class="info-val">C. Manoj Kumar</span></div>
+        <div class="info-row"><span class="info-label">Date of Birth</span><span class="info-val">26 Sep 2007</span></div>
+        <div class="info-row"><span class="info-label">Gender</span><span class="info-val">Male</span></div>
+        <div class="info-row"><span class="info-label">Nationality</span><span class="info-val">Indian</span></div>
+        <div class="info-row"><span class="info-label">Languages</span><span class="info-val">English, Telugu</span></div>
+      </div>
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Family</p>
+        <div class="info-row"><span class="info-label">Father</span><span class="info-val">C. Veeranarappa</span></div>
+        <div class="info-row"><span class="info-label">Mother</span><span class="info-val">C. Yellamma</span></div>
+        <div style="margin-top:1.5rem">
+          <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem">Places Visited</p>
+          <div>
+            <span class="place-chip">📍 Tamil Nadu</span>
+            <span class="place-chip">📍 Kerala</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resume">
+  <div class="section-fade">
+    <div class="divider"></div>
+    <h2>Resume</h2>
+    <p style="color:var(--muted);margin-bottom:2rem;line-height:1.8">Roll No: AM.SC.U4AIE25048 · B.Tech CSE (AI-A)</p>
+
+    <div class="card" style="margin-bottom:1rem">
+      <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Career Objective</p>
+      <p style="color:var(--muted);line-height:1.8;font-size:.9rem">To secure a responsible position where I can apply my skills, learn continuously, and grow along with the organization.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:1rem">
+      <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.5rem">Education</p>
+      <table>
+        <thead><tr><th>Degree</th><th>Institution</th><th>Year</th><th>Score</th></tr></thead>
+        <tbody>
+          <tr><td>B.Tech CSE (AI)</td><td>Amrita University</td><td>2025–2029</td><td>7.83 CGPA</td></tr>
+          <tr><td>Class XII</td><td>Shastra Junior College</td><td>2023–2025</td><td>97.8%</td></tr>
+          <tr><td>Class X</td><td>St. Vincent Depaul EM High School</td><td>2023</td><td>93%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Technical Skills</p>
+        <span class="skill-pill">Java</span>
+        <span class="skill-pill">C</span>
+      </div>
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Activities</p>
+        <div class="info-row"><span class="info-label">Seva Activities</span></div>
+        <div class="info-row"><span class="info-label">Volunteering</span></div>
+        <div class="info-row"><span class="info-label">Resume in HTML</span></div>
+        <div class="info-row"><span class="info-label">Travel Blog in HTML</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="favourites">
+  <div class="section-fade">
+    <div class="divider"></div>
+    <h2>Interests</h2>
+    <p style="color:var(--muted);margin-bottom:2rem;line-height:1.8">Things that inspire and entertain me.</p>
+    <div class="grid3">
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Books</p>
+        <div class="fav-item"><div class="fav-icon">📖</div><div><div>Ramayanam</div><div class="fav-label">Epic</div></div></div>
+        <div class="fav-item"><div class="fav-icon">📖</div><div><div>Bhagavath Geetha</div><div class="fav-label">Philosophy</div></div></div>
+      </div>
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Movies</p>
+        <div class="fav-item"><div class="fav-icon">🎬</div><div><div>Salaar</div><div class="fav-label">Action</div></div></div>
+      </div>
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Music</p>
+        <div class="fav-item"><div class="fav-icon">🎵</div><div><div>Love Songs</div><div class="fav-label">Mood</div></div></div>
+        <div class="fav-item"><div class="fav-icon">🎵</div><div><div>Breakup Songs</div><div class="fav-label">Feels</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-fade">
+    <div class="divider"></div>
+    <h2>Contact</h2>
+    <p style="color:var(--muted);margin-bottom:2rem;line-height:1.8">Reach out via email or phone.</p>
+    <div class="grid2">
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">University</p>
+        <div class="info-row"><span class="info-label">Name</span><span class="info-val">Amrita Vishwa Vidhya Peetham</span></div>
+        <div class="info-row"><span class="info-label">Campus</span><span class="info-val">Amritapuri</span></div>
+        <div class="info-row"><span class="info-label">Location</span><span class="info-val">Kollam, Kerala</span></div>
+      </div>
+      <div class="card">
+        <p style="color:var(--accent);font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:1rem">Get In Touch</p>
+        <div class="info-row"><span class="info-label">Email</span><span class="info-val" style="font-size:.78rem;color:var(--accent)">am.sc.u4aie25048@am.students.amrita.edu</span></div>
+        <div class="info-row"><span class="info-label">Phone</span><span class="info-val">7989499959</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 C. Manoj Kumar · Amrita University</p>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.section-fade').forEach(el=>obs.observe(el));
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'})}));
+</script>
+
+</body>
+</html>
